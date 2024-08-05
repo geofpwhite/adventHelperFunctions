@@ -17,12 +17,12 @@ func MapToImage[T any](m map[[2]int]T) [][]T {
 			maxy = key[1]
 		}
 	}
-	img := make([][]T, maxx-minx)
+	img := make([][]T, maxx-minx+1)
 	for i := range img {
-		img[i] = make([]T, maxy-miny)
+		img[i] = make([]T, maxy-miny+1)
 	}
 	for coords, value := range m {
-		img[coords[0]-minx][coords[1]-miny] = value
+		img[coords[0]-minx+1][coords[1]-miny+1] = value
 	}
 	return img
 
