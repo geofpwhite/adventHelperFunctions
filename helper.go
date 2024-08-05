@@ -17,6 +17,8 @@ func MapToImage[T any](m map[[2]int]T) [][]T {
 			maxy = key[1]
 		}
 	}
+	maxx += 10
+	maxy += 10
 	img := make([][]T, maxx-minx+1)
 	for i := range img {
 		img[i] = make([]T, maxy-miny+1)
